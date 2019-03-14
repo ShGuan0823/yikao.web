@@ -16,6 +16,7 @@ input{
 .signup{
     border: 1px solid #dce3e8;
     width: 660px;
+    margin: 20px auto;
 
 }
 .register-label{
