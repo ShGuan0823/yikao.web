@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/yikao")
-public class LoginContrller {
+public class LoginController {
 
 
     @GetMapping("/login")
