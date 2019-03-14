@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Sign in</title>
-    <link rel="stylesheet" href="../static/css/signin.css">
+    <link rel="stylesheet" href="/css/signin.css">
 </head>
 <body>
 <header>
@@ -24,18 +24,18 @@
                     </div>
                 </div>
                 <div class="input-area">
-                    <form action="" method="POST">
+                    <form action="loginVerify" accept-charset="utf-8" method="POST">
                         <div class="item">
-                            <input type="text" class="input-line" placeholder="手机号/邮箱">
+                            <input type="text" class="input-line" name="username" placeholder="手机号/邮箱">
                         </div>
                         <div class="item">
-                            <input type="password" class="input-line" placeholder="请输入密码">
+                            <input type="password" class="input-line" name="password" placeholder="请输入密码">
                         </div>
                         <div class="item">
                             <div class="login-tip">
                                 <div class="remember_me">
-                                <input type="checkbox">
-                                    <label for="">记住我</label>
+                                <input type="checkbox" id="remember_me">
+                                    <label for="remember_me">记住我</label>
                                 </div>
                                 <div class="forget_pwd">
                                     <a href="#">忘记密码？</a>
@@ -43,7 +43,7 @@
                             </div>
                         </div>
                         <div class="item">
-                            <button class="login-btn">登 录</button>
+                            <button class="login-btn" type="submit">登 录</button>
                         </div>
                         <div class="other-login-method">
                             <span>其他方式登录</span>
