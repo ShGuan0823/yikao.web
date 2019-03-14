@@ -1,0 +1,89 @@
+header>div{
+    color: #ffffffff;
+    background-color: #303643;
+    text-align: center;
+}
+input{
+    width: 240px;
+    height: 30px;  
+}
+.input-line>label{
+    display: inline-block;
+    width: 160px;
+    text-align: right;
+    margin-right: 20px;
+}
+.signup{
+    border: 1px solid #dce3e8;
+    width: 660px;
+
+}
+.register-label{
+    float: left;
+    display: block;
+    content: "";
+    clear: both;
+}
+.to-login{
+    float: right; 
+}
+.clear-float{
+    margin-bottom: 20px;
+}
+.clear-float::after{
+    clear: both;
+    content: "";
+    display: block;
+}
+.input-line{
+    width: 600px;
+    height: 40px;
+    padding: 10px;
+    margin: 10px auto;
+    
+}
+.eamil_captcha{
+    display: inline;
+}
+.eamil_captcha>a{
+    font-size: 12px;
+    padding: 20px;
+}
+.send_email_catptcha{
+    appearance: none;
+    height: 40px;
+    width: 100px;
+    border: 1px solid #fe7300;
+    background-color: transparent !important;
+    color: #fe7300;
+}
+input.eamil_captcha{
+    width: 140px;
+
+}
+input.accept_term{
+     width: 15px;
+     height: 15px;
+    
+}
+div.accept_term{
+    /* display: inline-block; */
+    text-align: center;
+}
+.register-btn-div{
+    margin: 20px auto;
+    text-align: center;
+}
+.register-btn{
+    appearance: none;
+    width: 200px;
+    height: 30px;
+    font-size: 15px;
+    background-color: #e46700;
+    color: white;
+    border: none;
+    border-radius: 2px;
+}
+.other-login-method{
+    text-align: center;
+}
