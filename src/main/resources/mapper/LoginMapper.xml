@@ -6,6 +6,6 @@
     </select>
 
     <select id="getSaltByName" resultType="java.lang.String" parameterType="java.lang.String">
-        SELECT salt FROM sg_yikao_user WHERE salt = #{salt}
+        SELECT salt FROM sg_yikao_user WHERE username = #{username}
     </select>
 </mapper>

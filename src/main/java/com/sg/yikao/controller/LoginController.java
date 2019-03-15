@@ -4,7 +4,8 @@ import com.sg.yikao.common.ServerResponse;
 import com.sg.yikao.config.NeedLogin;
 import com.sg.yikao.entity.User;
 import com.sg.yikao.service.LoginService;
-import com.sg.yikao.util.MD5;
+import com.sg.yikao.util.MD5util;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,6 +26,7 @@ import java.security.NoSuchAlgorithmException;
 @RequestMapping("/yikao")
 public class LoginController {
 
+    @Autowired
     private LoginService loginService;
 
 
@@ -42,11 +44,17 @@ public class LoginController {
 //            session.setAttribute("user", user);
 //            return "index";
 //        }
+        if (user == null){
+            return "redirect:login";
+        }
         String salt = loginService.getSaltByName(user);
-        String pwd = MD5.getEncryptedPwd(user.getPassword(), salt);
-        if(pwd.equals(loginService.getPasswordByName(user))){
-            session.setAttribute("user", user);
-            return "index";
+        String pwd;
+        if (salt != null){
+            pwd = MD5util.getEncryptedPwd(user.getPassword(), salt);
+            if(pwd.equals(loginService.getPasswordByName(user))){
+                session.setAttribute("user", user);
+                return "index";
+            }
         }
         return "redirect:login";
     }

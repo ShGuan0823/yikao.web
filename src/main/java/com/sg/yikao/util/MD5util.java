@@ -6,14 +6,14 @@ import java.security.NoSuchAlgorithmException;
 
 /**
  * @Author Ssssg
- * @Description TODO
+ * @Description MD5加密
  * @Date 2019/3/14 22:23
  **/
-public class MD5 {
+public class MD5util {
 
 
     private static final String HEX_NUMS_STR="0123456789ABCDEF";
-    private static final Integer SALT_LENGTH = 16;
+    private static final Integer SALT_LENGTH = 32;
 
 
     /**
