@@ -31,8 +31,8 @@
                         <div class="input-line">
                             <label for="captcha">验证码</label>
                             <input type="text" class="captcha" name="captcha" id="captcha">
-                            <div>
-                                <img src="" alt="">
+                            <div class="captcha_img">
+                                <a href="javascript:reloadCaptcha()"><img id="captchaImg" src="/yikao/captcha"/></a>
                             </div>
                         </div>
                         <div class="input-line">
@@ -84,4 +84,5 @@
     </main>
     <footer></footer>
 </body>
+<script src="/js/signup.js"></script>
 </html>

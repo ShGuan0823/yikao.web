@@ -20,6 +20,7 @@ public class LoginServiceImpl implements LoginService {
 
     @Override
     public String getSaltByName(User user) {
+
         return loginDao.getSaltByName(user.getUsername());
     }
 
