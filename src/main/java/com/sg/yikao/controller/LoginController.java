@@ -7,10 +7,8 @@ import com.sg.yikao.service.LoginService;
 import com.sg.yikao.util.MD5util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.io.UnsupportedEncodingException;
@@ -35,7 +33,12 @@ public class LoginController {
         return "signin";
     }
 
-
+    @GetMapping("/index")
+    @NeedLogin
+    public String index(@RequestParam("usename") String username, Model model){
+        model.addAttribute("username", username);
+        return "index";
+    }
 
     @PostMapping("/loginVerify")
     public String loginVerify(User user, HttpSession session) throws UnsupportedEncodingException, NoSuchAlgorithmException {
@@ -53,6 +56,7 @@ public class LoginController {
             pwd = MD5util.getEncryptedPwd(user.getPassword(), salt);
             if(pwd.equals(loginService.getPasswordByName(user))){
                 session.setAttribute("user", user);
+//                this.index(user.getUsername())
                 return "index";
             }
         }
