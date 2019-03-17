@@ -30,7 +30,7 @@ public class EmailController {
 
     @GetMapping("/emailcaptcha")
     @ResponseBody
-    public ServerResponse sendEmail(HttpSession session, String To, String Cc, String Bcc){
+    public ServerResponse sendEmail(HttpSession session, String To, String[] Cc, String[] Bcc){
 
         if (session == null){
             return ServerResponse.createByErrorMessage("请求失败");
@@ -50,11 +50,11 @@ public class EmailController {
             }
             if (Cc != null){
                 // 设置抄送
-                helper.setCc("");
+                helper.setCc(Cc);
             }
             if (Bcc != null){
                 // 设置密抄
-                helper.setBcc("");
+                helper.setBcc(Bcc);
             }
             // 设置主题
             helper.setSubject("主题：验证码测试");
