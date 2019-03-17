@@ -23,10 +23,10 @@
                     </div>
                 </div>
                 <div class="input-area">
-                    <form class="register" action="/yikao/toregister" method="POST">
+                    <form class="register" action="/yikao/toregister" method="POST" th:object="${userForm}">
                         <div class="input-line">
                             <label for="email">邮箱</label>
-                            <input type="text" class="email" name="email" id="email" placeholder="请输入工作邮箱">
+                            <input type="text" class="email" name="email" id="email" th:field="*{mail}" placeholder="请输入工作邮箱">
                         </div>
                         <div class="input-line">
                             <label for="captcha">验证码</label>
@@ -45,7 +45,7 @@
                         </div>
                         <div class="input-line">
                             <label for="username">姓名</label>
-                            <input type="text" class="username"  name="username" id="username" size="30">
+                            <input type="text" class="username"  name="username" id="username" th:field="*{username}" size="30">
                         </div>
                         <div class="input-line">
                             <label for="password">密码</label>
