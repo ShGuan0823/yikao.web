@@ -35,6 +35,9 @@ public class CaptchaController {
     public DefaultKaptcha initKaptcha(){
         DefaultKaptcha kaptcha = new DefaultKaptcha();
         Properties properties = new Properties();
+        properties.put(Constants.KAPTCHA_IMAGE_WIDTH, "140");
+        properties.put(Constants.KAPTCHA_IMAGE_HEIGHT, "40");
+        properties.put(Constants.KAPTCHA_TEXTPRODUCER_FONT_SIZE, "30");
         Config config = new Config(properties);
         kaptcha.setConfig(config);
         return kaptcha;

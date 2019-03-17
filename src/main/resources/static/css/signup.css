@@ -41,10 +41,17 @@ input{
     height: 40px;
     padding: 10px;
     margin: 10px auto;
-    
 }
 .captcha_img{
+    display: inline;
     height: 40px;
+}
+.captchaImg{
+    vertical-align: middle;
+}
+input.captcha{
+    vertical-align: middle;
+    width: 100px;
 }
 .eamil_captcha{
     display: inline;
